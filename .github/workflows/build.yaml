@@ -20,4 +20,3 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - name: DORA deployment frequency
         uses: DeveloperMetrics/deployment-frequency@v1.5.10
-            
