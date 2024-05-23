@@ -19,7 +19,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - name: DORA deployment frequency
-        uses: DeveloperMetrics/deployment-frequency@v1.5.10
+        uses: DeveloperMetrics/deployment-frequency@main
         with:
           workflows: 'CI'
-          actions-token: "${{ secrets.GITHUB_TOKEN }}"
