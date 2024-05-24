@@ -21,4 +21,4 @@ jobs:
       - name: DORA deployment frequency
         uses: DeveloperMetrics/deployment-frequency@main
         with:
-          workflows: 'CI'
+          workflows: 'Build'
