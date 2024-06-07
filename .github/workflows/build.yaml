@@ -29,4 +29,11 @@ jobs:
           -H "Accept: application/vnd.github.v3+json" \
           -H "Authorization: token ${{ secrets.GH_TOKEN }}" \
           https://api.github.com/repos/thiagop4z/test-octolense/deployments \
-          -d '{"ref":"main"}'
+          -d '{"deployment_time": "$(date)", "branch": "main"}'
+      - name: Log to Victoria
+        run: |
+          curl \
+          -X POST \
+          -H "Content-Type: application/json" \
+          https://victoria.usln.rocks/loki/api/v1/push \
+          -d '{"deployment_time": "$(date)", "branch": "main"}'
