@@ -22,3 +22,11 @@ jobs:
         uses: DeveloperMetrics/deployment-frequency@main
         with:
           workflows: 'Deploy to Production'
+      - name: Log Deployment
+        run: |
+          curl \
+          -X POST \
+          -H "Accept: application/vnd.github.v3+json" \
+          -H "Authorization: token ${{ secrets.GH_TOKEN }}" \
+          https://api.github.com/repos/thiagop4z/test-octolense/deployments \
+          -d '{"ref":"main"}'
