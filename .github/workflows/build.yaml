@@ -20,5 +20,5 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - name: DORA deployment frequency
         uses: DeveloperMetrics/deployment-frequency@main
-        with:
-          workflows: 'Deploy to Production'
+        # with:
+        #   workflows: 'Deploy to Production'
